@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<launch>
+  <include file="$(find hector_quadrotor_util)/launch/start.launch">
+  <!-- <arg name="world" value="$(find hector_quadrotor_util)/worlds/test_eular.world"/> -->
+	<arg name="world" value="$(find hector_quadrotor_util)/worlds/aggressive.world"/>
+  <!--  <arg name="world" value="$(find hector_gazebo_worlds)/worlds/empty.world"/> -->
+  </include>
+
+</launch>

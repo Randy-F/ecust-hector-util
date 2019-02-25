@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<launch>
+  <node name="hector_joy_sim" pkg="hector_quadrotor_util" type="hector_joy_sim" respawn="false" output="screen">
+    <param name="x_con_kp" value="2.0"/>  <param name="x_con_ki" value="0"/>  <param name="x_con_kd" value="0"/>
+    <param name="y_con_kp" value="2.0"/>  <param name="y_con_ki" value="0"/>  <param name="y_con_kd" value="0"/>
+    <param name="z_con_kp" value="2.0"/>  <param name="z_con_ki" value="0"/>  <param name="z_con_kd" value="0"/>
+
+    <param name="roll_con_kp" value="1.0"/>  <param name="roll_con_ki" value="0"/>  <param name="roll_con_kd" value="0"/>
+    <param name="pitch_con_kp" value="1.0"/>  <param name="pitch_con_ki" value="0"/>  <param name="pitch_con_kd" value="0"/>
+    <param name="yaw_con_kp" value="1.0"/>  <param name="yaw_con_ki" value="0"/>  <param name="yaw_con_kd" value="0"/>
+    <param name="vz2z_con_kp" value="0"/>  <param name="vz2z_con_ki" value="0"/>  <param name="vz2z_con_kd" value="0.0"/>
+    <param name="thrust2vz_con_kp" value="0"/>  <param name="thrust2vz_con_ki" value="0"/>  <param name="thrust2vz_con_kd" value="0.0"/>
+  </node>
+  
+  <node pkg="rosbag" type="play" name="play_traj" output="log" args="--delay 0.5 $(find hector_quadrotor_util)/bag/simple_ctrl_traj.bag"/>
+
+</launch>
